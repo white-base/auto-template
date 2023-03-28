@@ -1,0 +1,12 @@
+{
+	"cover": [],
+	"publish": [
+		{
+			"tar": "src/single.html",
+			"ori": "/Users/kimneo/PJ-Git/white-base#auto-template/test/event/mod1/template/__cache/single.html"
+		}
+	],
+	"focus": {
+		"src/single.html": "/Users/kimneo/PJ-Git/white-base#auto-template/test/event/mod1/template/__cache/single.html"
+	}
+}
