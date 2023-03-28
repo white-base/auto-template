@@ -1,0 +1,153 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`task :: publish < 속성 검사 > - data : entity.json 1`] = `
+"{
+	"isPublic": true,
+	"content": {
+		"Table": "1",
+		"Tables": [
+			10,
+			20
+		]
+	},
+	"dir": "@@",
+	"area": "DATA",
+	"fullPath": "@@/template/data/entity",
+	"areaDir": "template/data",
+	"subDir": "",
+	"subPath": "entity",
+	"localDir": "template/data",
+	"localPath": "template/data/entity",
+	"name": "entity",
+	"fileName": "entity.json",
+	"filePath": "@@/template/data/entity.json"
+}"
+`;
+
+exports[`task :: publish < 속성 검사 > - helper : bold.js 1`] = `
+"{
+	"isPublic": true,
+	"dir": "@@",
+	"area": "HELPER",
+	"fullPath": "@@/template/helper/bold",
+	"areaDir": "template/helper",
+	"subDir": "",
+	"subPath": "bold",
+	"localDir": "template/helper",
+	"localPath": "template/helper/bold",
+	"name": "bold",
+	"fileName": "bold.js",
+	"filePath": "@@/template/helper/bold.js"
+}"
+`;
+
+exports[`task :: publish < 속성 검사 > - part : inc/content.hbs 1`] = `
+"{
+	"isPublic": true,
+	"content": "<content><!--part/inc/content-->\\n    내용임\\n</content>",
+	"dir": "@@",
+	"area": "PART",
+	"fullPath": "@@/template/part/inc/content",
+	"areaDir": "template/part",
+	"subDir": "inc",
+	"subPath": "inc/content",
+	"localDir": "template/part/inc",
+	"localPath": "template/part/inc/content",
+	"name": "content",
+	"fileName": "content.hbs",
+	"filePath": "@@/template/part/inc/content.hbs",
+	"saveName": "content",
+	"saveDir": "@@/template/part/inc",
+	"savePath": "@@/template/part/inc/content",
+	"origin": "inc/content"
+}"
+`;
+
+exports[`task :: publish < 속성 검사 > - part : inc/foote.hbs 1`] = `
+"{
+	"isPublic": true,
+	"content": "<footer><!--part/inc/footer-->\\n    <p>기본 footer. </p>\\n    $entity.Table={{ entity.Table }}$\\n</footer>\\n",
+	"dir": "@@",
+	"area": "PART",
+	"fullPath": "@@/template/part/inc/footer",
+	"areaDir": "template/part",
+	"subDir": "inc",
+	"subPath": "inc/footer",
+	"localDir": "template/part/inc",
+	"localPath": "template/part/inc/footer",
+	"name": "footer",
+	"fileName": "footer.hbs",
+	"filePath": "@@/template/part/inc/footer.hbs",
+	"saveName": "footer",
+	"saveDir": "@@/template/part/inc",
+	"savePath": "@@/template/part/inc/footer",
+	"origin": "inc/footer"
+}"
+`;
+
+exports[`task :: publish < 속성 검사 > - part : inc/header.hbs 1`] = `
+"{
+	"isPublic": true,
+	"content": "<header><!--part/inc/header-->\\n  # data 삽입 \\n  $entity.Tables.[0]:{{ entity.Tables.[0] }}$\\n\\n  {{#each params}}\\n      {{this}} sss\\n  {{/each}}\\n\\n  # part 삽입\\n  {{> inc/content }}\\n\\n</header>\\n",
+	"dir": "@@",
+	"area": "PART",
+	"fullPath": "@@/template/part/inc/header",
+	"areaDir": "template/part",
+	"subDir": "inc",
+	"subPath": "inc/header",
+	"localDir": "template/part/inc",
+	"localPath": "template/part/inc/header",
+	"name": "header",
+	"fileName": "header.hbs",
+	"filePath": "@@/template/part/inc/header.hbs",
+	"saveName": "header",
+	"saveDir": "@@/template/part/inc",
+	"savePath": "@@/template/part/inc/header",
+	"origin": "inc/header"
+}"
+`;
+
+exports[`task :: publish < 속성 검사 > - src : one.html.hbs 1`] = `
+"{
+	"isPublic": true,
+	"content": "<one><!--src/one.html-->\\n\\n    {{#>inc/header }}\\n        @inc/header:none@ 없음\\n    {{/inc/header}}\\n\\n    {{> inc/footer }}\\n\\n    @{{#bold }}BOLD{{/bold }}@\\n</one>",
+	"dir": "@@",
+	"area": "SRC",
+	"fullPath": "@@/src/one.html",
+	"areaDir": "src",
+	"subDir": "",
+	"subPath": "one.html",
+	"localDir": "src",
+	"localPath": "src/one.html",
+	"name": "one.html",
+	"fileName": "one.html.hbs",
+	"filePath": "@@/src/one.html.hbs",
+	"saveName": "one.html",
+	"saveDir": "@@/src",
+	"savePath": "@@/src/one.html",
+	"origin": "one.html"
+}"
+`;
+
+exports[`task :: publish - 파일 비교 : src/one.html 1`] = `
+"<one><!--src/one.html-->
+
+<header><!--part/inc/header-->
+  # data 삽입 
+  $entity.Tables.[0]:10$
+
+
+  # part 삽입
+  <content><!--part/inc/content-->
+      내용임
+  </content>
+</header>
+
+    <footer><!--part/inc/footer-->
+        <p>기본 footer. </p>
+        $entity.Table=1$
+    </footer>
+
+    @<div class="mybold">BOLD</div>@
+</one>"
+`;
