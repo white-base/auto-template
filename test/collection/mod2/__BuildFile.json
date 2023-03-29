@@ -2,9 +2,9 @@
 	"cover": [],
 	"publish": [],
 	"focus": {
-		"src/p3.html": "/Users/kimneo/PJ-Git/white-base#auto-template/test/collection/mod2/template/__cache/p3.html",
-		"src/p2.html": "/Users/kimneo/PJ-Git/white-base#auto-template/test/collection/mod2/template/__cache/p2.html",
-		"src/p1.html": "/Users/kimneo/PJ-Git/white-base#auto-template/test/collection/mod2/template/__cache/p1.html",
-		"src/p2_clone.html": "/Users/kimneo/PJ-Git/white-base#auto-template/test/collection/mod2/template/__cache/$p2.html"
+		"src/p3.html": "/Users/kimneo/PJ-Git/logic-auto-template/test/collection/mod2/template/__cache/p3.html",
+		"src/p2.html": "/Users/kimneo/PJ-Git/logic-auto-template/test/collection/mod2/template/__cache/p2.html",
+		"src/p1.html": "/Users/kimneo/PJ-Git/logic-auto-template/test/collection/mod2/template/__cache/p1.html",
+		"src/p2_clone.html": "/Users/kimneo/PJ-Git/logic-auto-template/test/collection/mod2/template/__cache/$p2.html"
 	}
 }

@@ -1,6 +1,6 @@
 {
-  "name": "auto-template",
-  "version": "1.0.0",
+  "name": "logic-auto-template",
+  "version": "0.0.1",
   "description": "오토 템플릿",
   "main": "index.js",
   "scripts": {
