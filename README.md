@@ -17,3 +17,7 @@ All files           |   97.63 |    85.88 |     100 |   99.11 |
 
 
 커버리지 입니다.
+
+
+## 이름 변경
+logic-auto-template  >> logic template
