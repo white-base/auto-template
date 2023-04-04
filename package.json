@@ -1,5 +1,5 @@
 {
-  "name": "logic-template",
+  "name": "logic-auto-template",
   "version": "0.0.1",
   "description": "오토 템플릿",
   "main": "index.js",
@@ -15,9 +15,9 @@
     "jest": "^29.5.0"
   },
   "dependencies": {
-    "glob": "^9.3.2",
+    "glob": "^9.3.4",
     "handlebars": "^4.7.7",
-    "handlebars-wax": "^6.1.0",
+    "handlebars-wax": "github:white-base/handlebars-wax",
     "white-core": "github:white-base/core"
   }
 }

@@ -109,7 +109,7 @@ class AutoTask {
         this.entry.clear(opt);
         // if (this.entry !== null) this.entry.clear();
         // 이벤트 초기화
-        this.#event.unsubscribeAll();
+        this.#event.unsubscribe();
     }
 
     /**
