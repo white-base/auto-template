@@ -10,6 +10,9 @@ const dirname6   = __dirname + "/event/mod1";
 const dirname7   = __dirname + "/etc/mod1";
 
 describe("task :: clear", () => {
+    beforeAll(() => {
+        jest.resetModules();
+    });
     it("[ base 생성 및 do_clear(1) ]", () => {
         autoTask = AutoTask.create(dirname1);
         autoTask.isLog = false;
