@@ -1,0 +1,12 @@
+{
+	"cover": [],
+	"publish": [
+		{
+			"tar": "src/one.html",
+			"ori": "/Users/logic/PJ-Git/logic-auto-template/test/base/mod1/template/__cache/one.html"
+		}
+	],
+	"focus": {
+		"src/one.html": "/Users/logic/PJ-Git/logic-auto-template/test/base/mod1/template/__cache/one.html"
+	}
+}

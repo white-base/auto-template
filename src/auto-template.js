@@ -6,8 +6,8 @@ const { TemplateCollection }                = require('./source-template');
 const { CompileCollection }                 = require('./source-compile');
 const { PageGroupCollection, PageGroup }    = require('./page-group');
 
-const at = require('./auto-task');
-const AutoTask  = require("../src/auto-task").AutoTask;
+// const at = require('./auto-task');
+// const AutoTask  = require("../src/auto-task").AutoTask;
 
 /**
  * TODO: semver 버전 정보 검사
@@ -180,8 +180,8 @@ class AutoTemplate {
         this.#src       = new CompileCollection(this, this.AREA.SRC);
         this.#page      = new CompileCollection(this, this.AREA.PAGE);
 
-        this._task = at.AutoTask.getInstance();
-        this._task2 = AutoTask.getInstance();
+        // this._task = at.AutoTask.getInstance();
+        // this._task2 = AutoTask.getInstance();
 
         // console.log('www');
     }
