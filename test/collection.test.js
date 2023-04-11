@@ -1,6 +1,6 @@
 const fs        = require("fs");
 const path      = require("path");
-const AutoTask  = require("../src/auto-task").AutoTask;
+// const AutoTask  = require("../src/auto-task").AutoTask;
 const dirname1   = path.join(__dirname, "/collection/mod1");
 const dirname2   = path.join(__dirname, "/collection/mod2");
 let autoTask1, autoTask2
@@ -14,6 +14,7 @@ describe("main  ", () => {
     // 객체 생성에서 제어하기
     it("[ task로 설정 mod1, mod2 생성 ]", () => {
         jest.resetModules();
+        const AutoTask  = require("../src/auto-task").AutoTask;
         autoTask1 = AutoTask.create(dirname1);
         autoTask1.isLog = false;
         autoTask2 = AutoTask.create(dirname2);
@@ -245,6 +246,7 @@ describe("main  ", () => {
 describe("< 복제 검사 >", () => {
     beforeAll(() => {
         jest.resetModules();
+        const AutoTask  = require("../src/auto-task").AutoTask;
         autoTask2 = AutoTask.create(dirname2);
         autoTask2.isLog = false;
     });
@@ -329,6 +331,7 @@ describe("< 복제 검사 >", () => {
 describe("< 컬렉션 전체 설정 후 publish >", () => {
     beforeAll(() => {
         jest.resetModules();
+        const AutoTask  = require("../src/auto-task").AutoTask;
         autoTask1 = AutoTask.create(dirname1);
         autoTask1.isLog = false;
         autoTask2 = AutoTask.create(dirname2);
@@ -436,6 +439,7 @@ describe("< 컬렉션 전체 설정 후 publish >", () => {
 describe("task :: clear", () => {
     it("[ 생성 및 do_clear(1) ]", () => {
         jest.resetModules();
+        const AutoTask  = require("../src/auto-task").AutoTask;
         autoTask = AutoTask.create(dirname1);
         autoTask.isLog = false;
         autoTask.do_clear(1);   // 강제 클리어
@@ -493,6 +497,7 @@ describe("task :: clear", () => {
 describe("< 단독 빌드 >", () => {
     beforeAll(() => {
         jest.resetModules();
+        const AutoTask  = require("../src/auto-task").AutoTask;
         autoTask2 = AutoTask.create(dirname2);
         autoTask2.isLog = false;
     });
@@ -533,6 +538,7 @@ describe("< 단독 빌드 >", () => {
 describe("< data | helper .add() 예외 >", () => {
     beforeAll(() => {
         jest.resetModules();
+        const AutoTask  = require("../src/auto-task").AutoTask;
         autoTask1 = AutoTask.create(dirname1);
         autoTask1.isLog = false;
     });
@@ -562,6 +568,7 @@ describe("< data | helper .add() 예외 >", () => {
 describe("< [part, page, src].add() 예외 >", () => {
     beforeAll(() => {
         jest.resetModules();
+        const AutoTask  = require("../src/auto-task").AutoTask;
         autoTask1 = AutoTask.create(dirname1);
         autoTask1.isLog = false;
     });
@@ -590,6 +597,7 @@ describe("< [part, page, src].add() 예외 >", () => {
 describe("< add() >> 속성 덮어쓰기 및 예외 처리 >", () => {
     beforeAll(() => {
         jest.resetModules();
+        const AutoTask  = require("../src/auto-task").AutoTask;
         autoTask1 = AutoTask.create(dirname1);
         autoTask1.isLog = false;
         autoTask2 = AutoTask.create(dirname2);
@@ -637,6 +645,7 @@ describe("< add() >> 속성 덮어쓰기 및 예외 처리 >", () => {
 describe("< p2.html >> p2_clone.html 복제후 지역 설정 >", () => {
     beforeAll(() => {
         jest.resetModules();
+        const AutoTask  = require("../src/auto-task").AutoTask;
         autoTask2 = AutoTask.create(dirname2);
         autoTask2.isLog = false;
         const template2 = autoTask2.entry;

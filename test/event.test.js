@@ -1,6 +1,6 @@
 const fs        = require("fs");
 const path      = require("path");
-const AutoTask  = require("../src/auto-task").AutoTask;
+// const AutoTask  = require("../src/auto-task").AutoTask;
 const dirname   = path.join(__dirname, "/event/mod1");
 let autoTask    = null;
 
@@ -8,6 +8,7 @@ let autoTask    = null;
 describe("< 이벤트 >", () => {
     beforeAll(() => {
         jest.resetModules();
+        const AutoTask  = require("../src/auto-task").AutoTask;
         autoTask = AutoTask.create(dirname);
         autoTask.isLog = false;
     });

@@ -1,7 +1,7 @@
 const fs                                    = require('fs');
 const path                                  = require('path');
 const glob                                  = require('glob');
-const { PropertyCollection, Observer }      = require('white-core');
+const { PropertyCollection, Observer }      = require('logic-core');
 const { TemplateCollection }                = require('./source-template');
 const { CompileCollection }                 = require('./source-compile');
 const { PageGroupCollection, PageGroup }    = require('./page-group');

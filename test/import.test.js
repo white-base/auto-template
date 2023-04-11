@@ -1,6 +1,6 @@
 const fs        = require("fs");
 const path      = require("path");
-const AutoTask  = require("../src/auto-task").AutoTask;
+// const AutoTask  = require("../src/auto-task").AutoTask;
 const dirname   = path.join(__dirname, "/import/mod1");
 
 /**
@@ -11,6 +11,8 @@ const dirname   = path.join(__dirname, "/import/mod1");
 
 describe("task :: clear", () => {
     it("[ 생성 및 do_clear(1) ]", () => {
+        jest.resetModules();
+        const AutoTask  = require("../src/auto-task").AutoTask;
         autoTask = AutoTask.create(dirname);
         autoTask.isLog = false;
         autoTask.do_clear(1);   // 강제 클리어
@@ -94,6 +96,7 @@ describe("task :: publish", () => {
     });
 
     it("[ 생성 및 do_publish() ]", () => {
+        const AutoTask  = require("../src/auto-task").AutoTask;
         autoTask = AutoTask.create(dirname);
         autoTask.isLog = false;
         autoTask.do_publish();

@@ -3,7 +3,7 @@ const path                              = require('path');
 const glob                              = require('glob');
 const handlebars                        = require('handlebars');
 const handlebarsWax                     = require('handlebars-wax');
-const { PropertyCollection, Observer }  = require('white-core');
+const { PropertyCollection, Observer }  = require('logic-core');
 const { TemplateSource }                = require('./source-template');
 
 /**

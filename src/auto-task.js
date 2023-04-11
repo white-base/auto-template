@@ -1,6 +1,6 @@
 const fs                = require('fs');
 const path              = require('path');
-const { Observer }      = require('white-core');
+const { Observer }      = require('logic-core');
 // import fs from "fs";
 // import path from "path";
 // import { Observer } from "entitybind";

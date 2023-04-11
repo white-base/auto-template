@@ -6,6 +6,7 @@ const dirname   = path.join(__dirname, "/pageGroup/mod1");
 describe("task :: clear", () => {
     it("[ 생성 및 do_clear(1) ]", () => {
         jest.resetModules();
+        const AutoTask  = require("../src/auto-task").AutoTask;
         autoTask = AutoTask.create(dirname);
         autoTask.isLog = false;
         autoTask.do_clear(1);   // 강제 클리어
@@ -78,6 +79,7 @@ describe("task :: clear", () => {
 describe("task :: publish", () => {
     it("[ 생성 및 do_publish() ]", () => {
         jest.resetModules();
+        const AutoTask  = require("../src/auto-task").AutoTask;
         autoTask = AutoTask.create(dirname);
         autoTask.isLog = false;
         autoTask.do_publish();
@@ -290,6 +292,7 @@ describe("task :: publish", () => {
 describe("< PageGroup 기본값 변경 >", () => {
     beforeAll(() => {
         jest.resetModules();
+        const AutoTask  = require("../src/auto-task").AutoTask;
         autoTask = AutoTask.create(dirname, "noneTemplate.js");
         autoTask.isLog = false;
         const template = autoTask.entry;
@@ -377,6 +380,7 @@ describe("< PageGroup 기본값 변경 >", () => {
 describe("< PageGroup page 교체 >", () => {
     beforeAll(() => {
         jest.resetModules();
+        const AutoTask  = require("../src/auto-task").AutoTask;
         autoTask = AutoTask.create(dirname, "noneTemplate.js");
         autoTask.isLog = false;
         const template = autoTask.entry;
@@ -420,6 +424,7 @@ describe("< PageGroup page 교체 >", () => {
 describe("< PageGroup group 추가 및 제거 >", () => {
     beforeAll(() => {
         jest.resetModules();
+        const AutoTask  = require("../src/auto-task").AutoTask;
         autoTask = AutoTask.create(dirname, "noneTemplate.js");
         autoTask.isLog = false;
         const template = autoTask.entry;
@@ -488,6 +493,7 @@ describe("< PageGroup group 추가 및 제거 >", () => {
 describe("< PageGroup 예외 >", () => {
     beforeAll(() => {
         jest.resetModules();
+        const AutoTask  = require("../src/auto-task").AutoTask;
         autoTask = AutoTask.create(dirname, "noneTemplate.js");
         autoTask.isLog = false;
         // const template = autoTask.entry;

@@ -1,6 +1,6 @@
 const fs        = require("fs");
 const path      = require("path");
-const AutoTask  = require("../src/auto-task").AutoTask;
+// const AutoTask  = require("../src/auto-task").AutoTask;
 const dirname   = path.join(__dirname, "extends/mod1");
 let autoTask    = null;
 
@@ -16,6 +16,8 @@ let autoTask    = null;
 
 describe("task :: clear", () => {
     it("[ 생성 및 do_clear(1) ]", () => {
+        jest.resetModules();
+        const AutoTask  = require("../src/auto-task").AutoTask;
         autoTask = AutoTask.create(dirname);
         autoTask.isLog = false;
         autoTask.do_clear(1);   // 강제 클리어
@@ -80,6 +82,8 @@ describe("task :: clear", () => {
 
 describe("task :: publish", () => {
     it("[ 생성 및 do_publish() ]", () => {
+        jest.resetModules();
+        const AutoTask  = require("../src/auto-task").AutoTask;
         autoTask = AutoTask.create(dirname);
         autoTask.isLog = false;
         autoTask.do_publish();
@@ -178,6 +182,8 @@ describe("task :: publish", () => {
 describe("task :: cover", () => {
     it("[ 생성 및 do_cover() ]", () => {
         // AutoTask.destructor();
+        jest.resetModules();
+        const AutoTask  = require("../src/auto-task").AutoTask;
         autoTask = AutoTask.create(dirname);
         autoTask.isLog = false;
         autoTask.do_cover();
@@ -300,8 +306,10 @@ describe("task :: cover", () => {
 describe("< 예외 >", () => {
     beforeAll(() => {
         jest.resetModules();
+        
     });
     it("- autoTemplate.isFinal = true : 예외", () => {
+        const AutoTask  = require("../src/auto-task").AutoTask;
         expect(() => autoTask = AutoTask.create(dirname, "extendsTemplate.js")).toThrow(/상속금지/);
     });
 });

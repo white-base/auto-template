@@ -1,6 +1,6 @@
 const fs        = require("fs");
 const path      = require("path");
-const AutoTask  = require("../src/auto-task").AutoTask;
+// const AutoTask  = require("../src/auto-task").AutoTask;
 const dirname   = path.join(__dirname, "/base/mod1");
 let autoTask    = null;
 
@@ -54,6 +54,8 @@ function changeFakePath(obj) {
 
 describe("task :: clear", () => {
     it("[ new >> do_clear(1) ]", () => {
+        jest.resetModules();
+        const AutoTask  = require("../src/auto-task").AutoTask;
         autoTask = AutoTask.create(dirname);
         autoTask.isLog = false;
         autoTask.do_clear(1);   // 강제 클리어
@@ -67,6 +69,8 @@ describe("task :: clear", () => {
 
 describe("task :: publish", () => {
     it("[ new >> do_publish() ]", () => {
+        jest.resetModules();
+        const AutoTask  = require("../src/auto-task").AutoTask;
         autoTask = AutoTask.create(dirname);
         autoTask.isLog = false;
         autoTask.do_publish();
@@ -111,6 +115,8 @@ describe("task :: publish", () => {
 
 describe("change File", () => {
     it("[ new >> do_clear(1) >> do_publish() >> 파일 수정 >> do_clear() ]", () => {
+        jest.resetModules();
+        const AutoTask  = require("../src/auto-task").AutoTask;
         autoTask = AutoTask.create(dirname);    // 생성
         autoTask.isLog = false;
         autoTask.do_clear(1);   // 강제 클리어
@@ -135,6 +141,8 @@ describe("change File", () => {
 
 describe("rename template.js", () => {
     it("[ 생성 >> do_clear(1) >> do_publish() ]", () => {
+        jest.resetModules();
+        const AutoTask  = require("../src/auto-task").AutoTask;
         autoTask = AutoTask.create(dirname, "newTemplate.js");
         autoTask.isLog = false;
         autoTask.do_clear(1);   // 강제 초기화 (별도이 스코프!!)

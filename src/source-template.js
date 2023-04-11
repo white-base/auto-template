@@ -1,6 +1,6 @@
 const path                      = require('path');
 const glob                      = require('glob');
-const { PropertyCollection }    = require('white-core');
+const { PropertyCollection }    = require('logic-core');
 // import path from "path";
 // import glob from "glob";
 // import { PropertyCollection } from "entitybind";

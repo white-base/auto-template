@@ -1,6 +1,6 @@
 const fs        = require("fs");
 const path      = require("path");
-const AutoTask  = require("../src/auto-task").AutoTask;
+// const AutoTask  = require("../src/auto-task").AutoTask;
 const dirname   = path.join(__dirname, "/auto-task/mod1");
 let autoTask    = null;
 
@@ -11,9 +11,11 @@ let autoTask    = null;
 
 describe("create()", () => {
     it("- AutoTask.create(null) : 예외", () => {
+        const AutoTask  = require("../src/auto-task").AutoTask;
         expect(() => autoTask = AutoTask.create(null)).toThrow();
     });
     it("- AutoTask.getInstance() ", () => {
+        const AutoTask  = require("../src/auto-task").AutoTask;
         autoTask = AutoTask.create(dirname);
         autoTask.isLog = false;
         const autoTask2 = AutoTask.getInstance();

@@ -1,6 +1,6 @@
 const fs        = require("fs");
 const path      = require("path");
-const AutoTask  = require("../src/auto-task").AutoTask;
+// const AutoTask  = require("../src/auto-task").AutoTask;
 const dirname   = path.join(__dirname, "/etc/mod1");
 let autoTask    = null;
 
@@ -24,10 +24,12 @@ describe("< 인스턴스 생성 >", () => {
 
         // task = AutoTask.getInstance();
         // expect(() => task = AutoTask.getInstance()).toThrow();
+        const AutoTask  = require("../src/auto-task").AutoTask;
         expect(() => task = AutoTask.getInstance()).toThrow(/생성되지/);
     });
 
     it("- AutoTask.create() === AutoTask.getInstance() ", () => {
+        const AutoTask  = require("../src/auto-task").AutoTask;
         autoTask = AutoTask.create(dirname);
         const task = AutoTask.getInstance();
         // const fullPath = path.join(dirname2, "src/group/p2.html");
@@ -47,6 +49,7 @@ describe("< 인스턴스 생성 >", () => {
 describe("< 예외 >", () => {
     beforeAll(() => {
         jest.resetModules();
+        const AutoTask  = require("../src/auto-task").AutoTask;
         autoTask = AutoTask.create(dirname);
         autoTask.isLog = false;
     });

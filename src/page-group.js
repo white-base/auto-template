@@ -1,5 +1,5 @@
 const path                                      = require('path');
-const { PropertyCollection, Observer }          = require('white-core');
+const { PropertyCollection, Observer }          = require('logic-core');
 // import path from "path";
 // import { PropertyCollection, Observer } from "entitybind";
 
