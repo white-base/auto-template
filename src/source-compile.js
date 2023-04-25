@@ -404,7 +404,7 @@ class CompileCollection extends PropertyCollection {
                 alias = _this._makeAlias(subPath);
                 content = fs.readFileSync(val,'utf-8');
                 
-                idx = _this.indexOfName(alias);  // 중복이름 검사
+                idx = _this.indexOfProp(alias);  // 중복이름 검사
                 
                 if (idx > -1) { // 컬렉션이 존재할 경우
                     // _this[idx] = new CompileSource(_this._owner, dirs[i], this.area, alias, val);
