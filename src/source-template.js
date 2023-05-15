@@ -107,7 +107,7 @@ class TemplateSource {
 class TemplateCollection extends PropertyCollection {
     
     area = null;
-    _owner = null;
+    // _owner = null;
 
     /**
      * 템플릿컬렉션 생성자
@@ -118,7 +118,7 @@ class TemplateCollection extends PropertyCollection {
         super(owner);
 
         this.area = area;
-        this._owner = owner;
+        // this._owner = owner;
     }
     
     /*_______________________________________*/
@@ -179,7 +179,7 @@ class TemplateCollection extends PropertyCollection {
         let alias;
         
         for (let i = 0; i < collection.count; i++) {
-            // alias = collection.propertyOf(i);
+            // alias = collection.keyOf(i);
             // this.add(alias, collection[i]);
             this.add(collection[i]);
         }
@@ -193,7 +193,7 @@ class TemplateCollection extends PropertyCollection {
     addGlob(pattern, opt) {
         const _this = this;
         const sep = path.sep;
-        const dirs = this._onwer.dirs;
+        const dirs = this._owner.dirs;
         const delmiter = this._owner.DELIMITER[this.area];
         const areaDir = this._owner.DIR[this.area];
         let arrPath = [];
@@ -207,7 +207,7 @@ class TemplateCollection extends PropertyCollection {
                 alias = _this._makeAlias(subPath);
                 content = require(val);
 
-                idx = _this.indexOfProp(alias);  // 중복이름 검사
+                idx = _this.indexOf(alias, 1);  // 중복이름 검사
                 
                 if (idx > -1) { // 컬렉션이 존재할 경우
                     // _this[idx] = new TemplateSource(_this._owner, dirs[i], this.area, alias, val);

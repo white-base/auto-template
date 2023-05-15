@@ -604,7 +604,7 @@ class AutoTemplate {
 
         for(let i = 0; i < this.namespace.count; i++) {
             outTemplate = this.namespace[i];
-            alias = this.namespace.propertyOf(i);
+            alias = this.namespace.keyOf(i);
             // ns.part (compile)
             for (let ii = 0; ii < outTemplate.part.count; ii++) {
                 if (outTemplate.part[ii].isPublic == true) {
@@ -680,7 +680,7 @@ class AutoTemplate {
         // ns.helper
         for(let i = 0; i < this.namespace.count; i++) {
             outTemplate = this.namespace[i];
-            alias = this.namespace.propertyOf(i);
+            alias = this.namespace.keyOf(i);
             for (let ii = 0; ii < outTemplate.helper.count; ii++) {
                 if (outTemplate.helper[ii].isPublic == true) {
                     delimiter = outTemplate.DELIMITER.HELPER;
@@ -692,7 +692,7 @@ class AutoTemplate {
         // ns.data
         for(let i = 0; i < this.namespace.count; i++) {
             outTemplate = this.namespace[i];
-            alias = this.namespace.propertyOf(i);
+            alias = this.namespace.keyOf(i);
             for (let ii = 0; ii < outTemplate.data.count; ii++) {
                 if (outTemplate.data[ii].isPublic == true) {
                     delimiter = outTemplate.DELIMITER.DATA;
@@ -816,7 +816,7 @@ class AutoTemplate {
  */
 class NamespaceCollection extends PropertyCollection {
     
-    _owner = null;
+    // _owner = null;
     
     /**
      * 네임스페이스컬렉션, import한 외부 Tempalate들
@@ -824,7 +824,7 @@ class NamespaceCollection extends PropertyCollection {
      */
     constructor(owner) {
         super(owner);
-        this._owner = owner;
+        // this._owner = owner;
     }
 
     /**

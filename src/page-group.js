@@ -156,7 +156,7 @@ class PageGroupCollection extends PropertyCollection {
     
     /*_______________________________________*/        
     // protected
-    _owner = null;
+    // _owner = null;
     _GROUP_REG  = [/^[\\\/]?all([\\\/]|$)/];
     _ALL        = 'all';
 
@@ -166,7 +166,7 @@ class PageGroupCollection extends PropertyCollection {
      */
     constructor(owner) {
         super(owner);
-        this._owner = owner;
+        // this._owner = owner;
         // all 기본 그룹 추가
         this.#setAllGroup();
     }
@@ -259,7 +259,7 @@ class PageGroupCollection extends PropertyCollection {
         // super.clear();
         
         for(let i = 0; i < this.count; i++) {
-            const propName = this.propertyOf(i);
+            const propName = this.keyOf(i);
             if (propName !== this._ALL) this.removeAt(i);
         }
     }
@@ -277,7 +277,7 @@ class PageGroupCollection extends PropertyCollection {
 
         // 등록
         for (let i = 0; i < collection.count; i++) {
-            alias = collection.propertyOf(i);
+            alias = collection.keyOf(i);
             if (alias !== this._ALL) {
                 const pageGroup = this.#clonePage(collection[i]);
                 super.add(alias, pageGroup);

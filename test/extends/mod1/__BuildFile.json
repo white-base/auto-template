@@ -1,0 +1,35 @@
+{
+	"cover": [
+		{
+			"tar": "template/helper/bold.js",
+			"ori": "/Users/kimneo/PJ-Git/logic-auto-template/test/extends/mod2/template/helper/bold.js"
+		},
+		{
+			"tar": "template/part/title.hbs",
+			"ori": "/Users/kimneo/PJ-Git/logic-auto-template/test/extends/mod3/template/part/title.hbs"
+		},
+		{
+			"tar": "template/page/p1.html.hbs",
+			"ori": "/Users/kimneo/PJ-Git/logic-auto-template/test/extends/mod2/template/page/p1.html.hbs"
+		}
+	],
+	"publish": [
+		{
+			"tar": "src/inline/new_p1.html",
+			"ori": "/Users/kimneo/PJ-Git/logic-auto-template/test/extends/mod1/template/__cache/p1.html"
+		},
+		{
+			"tar": "src/one.html",
+			"ori": "/Users/kimneo/PJ-Git/logic-auto-template/test/extends/mod1/template/__cache/one.html"
+		}
+	],
+	"focus": {
+		"src/inline/arg1_1/arg1_2/group_arg2/pre_p1_suf.html": "/Users/kimneo/PJ-Git/logic-auto-template/test/extends/mod1/template/__cache/p1.html",
+		"src/inline/arg1_1/arg1_2/group_arg2/pre_p2_suf.html": "/Users/kimneo/PJ-Git/logic-auto-template/test/extends/mod1/template/__cache/p2.html",
+		"src/inline/new_p1.html": "/Users/kimneo/PJ-Git/logic-auto-template/test/extends/mod1/template/__cache/p1.html",
+		"src/one.html": "/Users/kimneo/PJ-Git/logic-auto-template/test/extends/mod1/template/__cache/one.html",
+		"src/ready/pre_p1_suf.html": "/Users/kimneo/PJ-Git/logic-auto-template/test/extends/mod1/template/__cache/$p1.html",
+		"src/ready/pre_p2_suf.html": "/Users/kimneo/PJ-Git/logic-auto-template/test/extends/mod1/template/__cache/p2.html",
+		"src/ready/pre_p3_suf.html": "/Users/kimneo/PJ-Git/logic-auto-template/test/extends/mod1/template/__cache/p3.html"
+	}
+}

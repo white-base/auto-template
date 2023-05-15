@@ -248,7 +248,7 @@ class CompileCollection extends PropertyCollection {
     
     /*_______________________________________*/        
     // protected
-    _owner = null;
+    // _owner = null;
     // ns, page, group 시작 예약어
     _partSymbol = [/^[\\\/]?ns([\\\/]|$)/, /^[\\\/]?page([\\\/]|$)/, /^[\\\/]?group([\\\/]|$)/];
 
@@ -261,7 +261,7 @@ class CompileCollection extends PropertyCollection {
         super(owner);
 
         this.area = area;
-        this._owner = owner;
+        // this._owner = owner;
     }
 
     /*_______________________________________*/
@@ -371,7 +371,7 @@ class CompileCollection extends PropertyCollection {
         let alias;
         
         for (let i = 0; i < collection.count; i++) {
-            alias = collection.propertyOf(i);
+            alias = collection.keyOf(i);
             this.add(alias, collection[i]);
         }
     }
@@ -393,8 +393,8 @@ class CompileCollection extends PropertyCollection {
         let localPattern, alias, content, subPath, idx;
 
         // src 의 경우 단일 경로 에서 로딩
-        if (this.area === this._owner.AREA.SRC) dirs.push(this._onwer.dir);
-        else dirs = [...dirs, ...this._onwer.dirs];
+        if (this.area === this._owner.AREA.SRC) dirs.push(this._owner.dir);
+        else dirs = [...dirs, ...this._owner.dirs];
 
         for (let i = 0; i < dirs.length; i++) {
             localPattern = path.join(dirs[i], pattern);
@@ -404,7 +404,7 @@ class CompileCollection extends PropertyCollection {
                 alias = _this._makeAlias(subPath);
                 content = fs.readFileSync(val,'utf-8');
                 
-                idx = _this.indexOfProp(alias);  // 중복이름 검사
+                idx = _this.indexOf(alias, 1);  // 중복이름 검사
                 
                 if (idx > -1) { // 컬렉션이 존재할 경우
                     // _this[idx] = new CompileSource(_this._owner, dirs[i], this.area, alias, val);
