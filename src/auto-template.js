@@ -318,7 +318,7 @@ class AutoTemplate {
               }
         }
 
-        // 파일 삭제
+        // cover 파일 삭제
         for (let i = 0; i < this._buildFile['cover'].length; i++) {
             filePath = path.join(this.dir, this._buildFile['cover'][i].tar);
             oriPath = this._buildFile['cover'][i].ori;
@@ -338,6 +338,7 @@ class AutoTemplate {
         this._buildFile['cover'] = ignoreCover;
 
 
+        // publish 파일 삭제
         for (let i = 0; i < this._buildFile['publish'].length; i++) {
             filePath = path.join(this.dir, this._buildFile['publish'][i].tar);
             oriPath = this._buildFile['publish'][i].ori;
