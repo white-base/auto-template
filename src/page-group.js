@@ -105,7 +105,7 @@ class PageGroup {
         let page, src, context, subPath;
         let argfix, prefix, suffix, dir;
 
-        if (typeof data !== 'object') throw new Error('[data] Object 타입만 설정할 수 있습니다.');
+        if (typeof data !== 'object') throw new Error('[data] Object 타입만 설정할 수 있습니다.');  // COVER: 2
 
         prefix = data['prefix'] || this.prefix;
         suffix = data['suffix'] || this.suffix;
@@ -119,7 +119,7 @@ class PageGroup {
         for (let i = 0; i < this._pages.length; i++) {
             page = this._pages[i];
             src = page.src;
-            context = page.context || src.subPath;
+            context = page.context || src.subPath;  // COVER: 2
             context = context.replace('.hbs','');
             context = dir.length > 0 ? path.join(dir, context) : context;
             // argfix = args.length > 0 ? args : this.#argfix;
@@ -131,7 +131,7 @@ class PageGroup {
 
     }
     
-    _makePath(ctxPath, prefix = '', suffix = '', args = []) {
+    _makePath(ctxPath, prefix = '', suffix = '', args = []) {   // COVER: 2
         
         let myPath, subDir, subPath, filename, arg;
 
@@ -215,7 +215,7 @@ class PageGroupCollection extends PropertyCollection {
 
         // 별칭 규칙 검사
         this._GROUP_REG.forEach(val => {
-            if ((val instanceof RegExp && val.test(alias)) || 
+            if ((val instanceof RegExp && val.test(alias)) ||   // COVER: 2
                 (typeof val === 'string' && val === alias)) {
                 throw new Error(`[group]에 예약어를 입력할 수 없습니다. : ${val}`);
             }
@@ -273,7 +273,7 @@ class PageGroupCollection extends PropertyCollection {
         // 지우기
         // this.clear();
         
-        if (!(collection instanceof PageGroupCollection)) throw new Error('PageGroupCollection 타입만 설정할 수 있습니다.');
+        if (!(collection instanceof PageGroupCollection)) throw new Error('PageGroupCollection 타입만 설정할 수 있습니다.');    // COVER: 2
 
         // 등록
         for (let i = 0; i < collection.count; i++) {
@@ -290,7 +290,7 @@ class PageGroupCollection extends PropertyCollection {
      * @param {*} pageGroup 
      */
     #clonePage(pageGroup) {
-        if (!(pageGroup instanceof PageGroup)) throw new Error('PageGroup 타입만 설정할 수 있습니다.');
+        if (!(pageGroup instanceof PageGroup)) throw new Error('PageGroup 타입만 설정할 수 있습니다.'); // COVER: 2
         const pages = pageGroup._pages;
         
         for (let i = 0; i < pages.length; i++) {

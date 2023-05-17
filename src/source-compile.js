@@ -320,7 +320,7 @@ class CompileCollection extends PropertyCollection {
             this._partSymbol.forEach(val => {
                 if ((val instanceof RegExp && val.test(alias)) || 
                     (typeof val === 'string' && val === alias)) {
-                    throw new Error('[part]에 예약어를 입력할 수 없습니다. : ns, page, group ');    // COVER:
+                    throw new Error('[part]에 예약어를 입력할 수 없습니다. : ns, page, group ');
                 }
             });
         }

@@ -45,8 +45,8 @@ class TemplateSource {
     get localDir() { return this.subDir === '' ? this.areaDir : path.join(this.areaDir, this.subDir); }
     get localPath() { return path.join(this.areaDir, this.subPath); }
     get name() { return path.basename(this.#subPath); }
-    get fileName() { return this.#filePath !== null ? path.basename(this.#filePath) : null; }
-    get filePath() { return this.#filePath; }
+    get fileName() { return this.#filePath !== null ? path.basename(this.#filePath) : null; }   // COVER: 2
+    get filePath() { return this.#filePath; }   // COVER: 2
 
     /**
      * 템플릿소스 생성자
@@ -55,7 +55,7 @@ class TemplateSource {
      * @param {*} alias 별칭
      * @param {*?} fullPath 전체경로(최상위부터)
      */
-    constructor(template, dir, area, alias, filePath = null) {
+    constructor(template, dir, area, alias, filePath = null) {  // COVER: 2
         // super(alias);
         // super();
 
@@ -236,7 +236,7 @@ class TemplateCollection extends PropertyCollection {
         fileName = path.parse(subPath).name;
         dir = path.parse(subPath).dir;
         dir = dir.replace(/\//g, delmiter);       // 구분 문자 변경
-        dir = dir.length > 0 ? dir + delmiter : dir;
+        dir = dir.length > 0 ? dir + delmiter : dir;        // COVER: 2
         return dir + fileName;
     }
 
